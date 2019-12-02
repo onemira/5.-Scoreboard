@@ -1,8 +1,8 @@
 let counter = 0
 
 const main = () => {
-  document.getElementsByClassName('team1-score').innerHTML = 'AH'
-  document.getElementsByClassName('team2-score').innerHTML = 'WHAT'
+  document.getElementsByClassName('team1-score').innerHTML = ''
+  document.getElementsByClassName('team2-score').innerHTML = ''
 }
 
 const updateTeam1Name = () => {
@@ -34,6 +34,8 @@ const subtractTeam2Score = () => {
   counter--
   document.querySelector('.team2-score').innerHTML = counter
 }
+
+/* -----------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', main)
 
