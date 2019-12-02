@@ -1,112 +1,62 @@
 let counter = 0
 
 const main = () => {
-  document.querySelector('p.team1score').textContent = 0
-  document.querySelector('p.team2score').textContent = 0
+  document.getElementsByClassName('team1-score').innerHTML = 'AH'
+  document.getElementsByClassName('team2-score').innerHTML = 'WHAT'
 }
 
-const addMyNameTeam1 = () => {
-  console.log('button clicked')
-  document.querySelector('h2.myteamname1').textContent = document.querySelector('.myNameTeam1Txt').value
+const updateTeam1Name = () => {
+  document.querySelector('.team1-name')
+    .innerHTML = document.querySelector('.team1-name-txt').value;
 }
 
-const addMyNameTeam2 = () => {
-  console.log('button clicked')
-  document.querySelector('h2.myteamname2').textContent = document.querySelector('.myNameTeam2Txt').value
+const updateTeam2Name = () => {
+  document.querySelector('.team2-name').innerHTML = document.querySelector('.team2-name-txt').value
 }
 
-const addMyScoreTeam1 = () => {
-  console.log('button clicked')
-  counter = counter + 1
-  console.log(counter)
-  document.querySelector('p.team1score').textContent = counter
-}
-const addMyScoreTeam2 = () => {
-  console.log('button clicked')
-  counter = counter + 1
-  console.log(counter)
-  document.querySelector('p.team1score').textContent = counter
+const addTeam1Score = () => {
+  counter++
+  document.querySelector('.team1-score').innerHTML = counter
 }
 
-const subtractMyScoreTeam1 = () => {
-  console.log('resetting counter')
-  counter = counter - 1
-  console.log('reset count to' + counter)
-  document.querySelector('p.team1score').textContent = counter
+const addTeam2Score = () => {
+  counter++
+  document.querySelector('.team2-score').innerHTML = counter
 }
 
-const subtractMyScoreTeam2 = () => {
-  console.log('resetting counter')
-  counter = counter - 1
-  console.log('reset count to' + counter)
-  document.querySelector('p.team2score').textContent = counter
+const subtractTeam1Score = () => {
+  counter--
+  document.querySelector('.team1-score').innerHTML = counter
+
+}
+
+const subtractTeam2Score = () => {
+  counter--
+  document.querySelector('.team2-score').innerHTML = counter
 }
 
 document.addEventListener('DOMContentLoaded', main)
 
 document
-  .querySelector('.update-team-name1')
-  .addEventListener('click', addMyNameTeam1)
+  .querySelector('.update-team1-name')
+  .addEventListener('click', updateTeam1Name)
 
 document
-  .querySelector('.update-team-name2')
-  .addEventListener('click', addMyNameTeam2)
+  .querySelector('.update-team2-name')
+  .addEventListener('click', updateTeam2Name)
 
 document
-  .querySelector('.team-1-add-1-button')
-  .addEventListener('click', addMyScoreTeam1)
+  .querySelector('.team1-plus-button')
+  .addEventListener('click', addTeam1Score)
 
 document
-  .querySelector('.team-2-add-2-button')
-  .addEventListener('click', addMyScoreTeam2)
+  .querySelector('.team2-plus-button')
+  .addEventListener('click', addTeam2Score)
 
 document
-  .querySelector('.update-team-name2')
-  .addEventListener('click', addMyScoreTeam2)
+  .querySelector('.team1-minus-button')
+  .addEventListener('click', subtractTeam1Score)
 
 document
-  .querySelector('.team-1-subtract-1-button')
-  .addEventListener('click', subtractMyScoreTeam1)
-
-document
-  .querySelector('.team-2-subtract-2-button')
-  .addEventListener('click', subtractMyScoreTeam2)
-// -------------------------------------------------
-// let counter = 0
-
-// const main = () => {
-//   document.querySelector('p').textContent = 0
-// }
-
-// // when a user clicks a button
-// const increaseCounter = () => {
-//   // i will do the things
-//   console.log('button clicked')
-//   // increase the varible 'counter' by 1
-//   counter = counter + 1
-//   // shortcut : counter++
-//   console.log(counter)
-//   // update the HTML with the new value
-//   // hey DOM, find the <p> and set your textContent = counter
-//   document.querySelector('p').textContent = counter
-// }
-
-// const resetCounter = () => {
-//   console.log('reseting counter')
-//   // set counter = 0
-//   counter = 0
-//   // update the html
-//   console.log('reset counter to ' + counter)
-//   document.querySelector('p').textContent = counter
-// }
-
-// document.addEventListener('DOMContentLoaded', main)
-// // go the HTML (DOM)
-// // find the button
-// // add event listener
-// // listen for the 'click' event
-// // when the 'click' event happens, run the function increaseCounter
-// document
-//   .querySelector('.add-one-button')
-//   .addEventListener('click', increaseCounter)
-// document.querySelector('.reset-button').addEventListener('click', resetCounter)
+  .querySelector('.team2-minus-button')
+  .addEventListener('click', subtractTeam2Score)
